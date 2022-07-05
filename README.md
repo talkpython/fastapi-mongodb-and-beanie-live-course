@@ -1,0 +1,1 @@
+# fastapi-mongodb-and-beanie-live-course
