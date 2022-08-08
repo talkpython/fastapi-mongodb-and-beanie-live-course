@@ -1,0 +1,111 @@
+{
+  "info": {
+    "author": "Samuel Colvin",
+    "author_email": "s@muelcolvin.com",
+    "bugtrack_url": null,
+    "synk": "https://snyk.io/advisor/python/pydantic",
+    "quality_score": "91",
+    "days_since_release": 21,
+    "classifiers": [
+      "Development Status :: 5 - Production/Stable",
+      "Environment :: Console",
+      "Environment :: MacOS X",
+      "Framework :: Hypothesis",
+      "Intended Audience :: Developers",
+      "Intended Audience :: Information Technology",
+      "Intended Audience :: System Administrators",
+      "License :: OSI Approved :: MIT License",
+      "Operating System :: POSIX :: Linux",
+      "Operating System :: Unix",
+      "Programming Language :: Python",
+      "Programming Language :: Python :: 3",
+      "Programming Language :: Python :: 3 :: Only",
+      "Programming Language :: Python :: 3.6",
+      "Programming Language :: Python :: 3.7",
+      "Programming Language :: Python :: 3.8",
+      "Programming Language :: Python :: 3.9",
+      "Programming Language :: Python :: 3.10",
+      "Topic :: Internet",
+      "Topic :: Software Development :: Libraries :: Python Modules"
+    ],
+    "description": "# pydantic\n\n[![CI](https://github.com/samuelcolvin/pydantic/workflows/CI/badge.svg?event=push)](https://github.com/samuelcolvin/pydantic/actions?query=event%3Apush+branch%3Amaster+workflow%3ACI)\n[![Coverage](https://coverage-badge.samuelcolvin.workers.dev/samuelcolvin/pydantic.svg?v=1)](https://coverage-badge.samuelcolvin.workers.dev/redirect/samuelcolvin/pydantic)\n[![pypi](https://img.shields.io/pypi/v/pydantic.svg)](https://pypi.python.org/pypi/pydantic)\n",
+    "description_content_type": "text/markdown",
+    "docs_url": null,
+    "download_url": "",
+    "downloads": {
+      "last_day": 670308,
+      "last_month": 20109268,
+      "last_week": 5027317
+    },
+    "home_page": "https://github.com/samuelcolvin/pydantic",
+    "keywords": "",
+    "license": "MIT",
+    "maintainer": "",
+    "maintainer_email": "",
+    "name": "pydantic",
+    "package_url": "https://pypi.org/project/pydantic/",
+    "platform": "",
+    "project_url": "https://pypi.org/project/pydantic/",
+    "project_urls": {
+      "Homepage": "https://github.com/samuelcolvin/pydantic"
+    },
+    "release_url": "https://pypi.org/project/pydantic/1.9.0/",
+    "requires_dist": [
+      "typing-extensions (>=3.7.4.3)",
+      "dataclasses (>=0.6) ; python_version < \"3.7\"",
+      "python-dotenv (>=0.10.4) ; extra == 'dotenv'",
+      "email-validator (>=1.0.3) ; extra == 'email'"
+    ],
+    "requires_python": ">=3.6.1",
+    "summary": "Data validation and settings management using python 3.6 type hinting",
+    "version": "1.9.0",
+    "yanked": false,
+    "yanked_reason": null
+  },
+  "last_serial": 12448229,
+  "releases": [
+    {
+      "version": "0.0.1",
+      "comment_text": "",
+      "digests": {
+        "md5": "8df5a937906cf609452d7811bc4d77cf",
+        "sha256": "1dd9831ccd048e3219e7e31317ad20106564b6cc96784e9ecd247fc21a0f15a4"
+      },
+      "downloads": -1,
+      "filename": "pydantic-0.0.1-py35.py36-none-any.whl",
+      "has_sig": false,
+      "md5_digest": "8df5a937906cf609452d7811bc4d77cf",
+      "packagetype": "bdist_wheel",
+      "python_version": "3.6",
+      "requires_python": null,
+      "size": 7508,
+      "upload_time": "2017-05-03T20:58:46",
+      "upload_time_iso_8601": "2017-05-03T20:58:46.547771Z",
+      "url": "https://files.pythonhosted.org/packages/fe/1c/82ccdb995e5951cc6b86593a5ffc527e4435432514ce3f74cf4af2c19cd5/pydantic-0.0.1-py35.py36-none-any.whl",
+      "yanked": false,
+      "yanked_reason": null
+    },
+    {
+      "version": "0.0.2",
+      "comment_text": "",
+      "digests": {
+        "md5": "58223c22239fdab885d9225b92391ddf",
+        "sha256": "fbedbd1fdac2f59c2d0cbdc080cdba3a8b9ca02b40554b17c1447909c2182093"
+      },
+      "downloads": -1,
+      "filename": "pydantic-0.0.2-py36-none-any.whl",
+      "has_sig": false,
+      "md5_digest": "58223c22239fdab885d9225b92391ddf",
+      "packagetype": "bdist_wheel",
+      "python_version": "py36",
+      "requires_python": null,
+      "size": 14595,
+      "upload_time": "2017-05-06T14:53:18",
+      "upload_time_iso_8601": "2017-05-06T14:53:18.249584Z",
+      "url": "https://files.pythonhosted.org/packages/01/d9/4811d9083c1e35b051802a087af1a6eca25899696ce6c4be938b8c383acd/pydantic-0.0.2-py36-none-any.whl",
+      "yanked": false,
+      "yanked_reason": null
+    }
+  ],
+  "vulnerabilities": []
+}
