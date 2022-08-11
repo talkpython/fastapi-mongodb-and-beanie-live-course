@@ -1,0 +1,6 @@
+requests
+pydantic
+colorama
+# uvloop
+bs4
+httpx

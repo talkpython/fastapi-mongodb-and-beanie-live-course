@@ -5,13 +5,13 @@ import requests
 import bs4
 from colorama import Fore
 
+import syncify
 
-# TODO: For now, same as sync, make it async.
 
-async def main():
-    await get_title_range()
-    await get_title_range_queued()
-    print("Done.")
+def main():
+    number = syncify.run(get_title_range())
+    syncify.run(get_title_range_queued())
+    print(f"Done {number}.")
 
 
 async def get_html(episode_number: int) -> str:
@@ -65,6 +65,8 @@ async def get_title_range():
         title = get_title(html, number)
         print(Fore.WHITE + f"Title found: {title}", flush=True)
 
+    return 42
+
 
 async def get_title_range_queued():
     # Please keep this range pretty small to not DDoS my site. ;)
@@ -82,5 +84,4 @@ async def get_title_range_queued():
 
 
 if __name__ == '__main__':
-    loop = asyncio.new_event_loop()
-    loop.run_until_complete(main())
+    main()
