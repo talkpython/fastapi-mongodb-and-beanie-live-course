@@ -10,42 +10,31 @@ I've downloaded a ton of data from PyPI and organized it into JSON documents. Th
 
 Once you download it, unzip it to a location where you can temporarily leave it while importing data. It won't be needed after that.
 
+To import the data, just run the file `load_data.py` in the code folder: `code/09-beanie-querying/bin`. Be sure to do this using the `code/09-beanie-querying` folder as the working directory or if you have it open in PyCharm, mark that folder as the **sources root**.
+
+In order for this to work, you'll need to have the MongoDB server running. Recall from the discussion today, it may or may not auto start, depending on the platform, how in installed it, and what you've done since then. So to run MongoDB the server:
+
+* macOS (via Homebrew): `brew services start mongodb-community` 
+* Linux (via apt, etc): `sudo systemctl start mongod`
+* Windows: Open `services` command panel, find MongoDB, press the start button if it's not running
+
+Run the program as described above. Then open your management tool of choice (e.g. Robomongo) and verify there is data in the server.
+
+## Querying the database
+
+For our demos today, we started with an empty structure of a program that asked questions about our data (like number of packages and users, etc). For your homework, you'll start with that empty project again and create it from scratch.
+
+Feel free to use the final code I checked in today as well as the slides from today to figure out what code you need.
+
+Look in the folder:
+
+`exercises/09-queries/query_starter` 
+
+There's the file `beanie_querying_app.py`. Start there and implement the functions needed in the two `services` files. Again, that top-level folder (`query_starter`) will need to be the sources root.
 
 
 
+## Solutions
 
-
-
-The steps to install MongoDB differs a lot across OSes. Just visit the [**MongoDB Installation Tutorials**](https://www.mongodb.com/docs/manual/installation/) page, find your OS, and follow along. Of course, you're welcome to use an alternative method if you have experience or want to experiment.
-
-Personally, my best experience has been with:
-
-* macOS -> via homebrew (described in the page above)
-* Windows -> via the MSI installer on [this page](https://www.mongodb.com/try/download/community)
-* Linux -> via the os package manager
-
-## Installing management tools
-
-While we will primarily be using Python + Beanie to talk with Mongo, you'll need to check in on it using some more general tools from time to time. That's where the management tools come in. 
-
-If you'd like to have access to the management tools (recommended), then [install them as described here](https://www.mongodb.com/docs/mongodb-shell/install/#std-label-mdb-shell-install). This is where you get `mongosh` that you saw me use but also utilities for backing up and restoring Mongo.
-
-You'll also want a better UI-oriented tool for day to day work with the database. Options include:
-
-* **Robomongo** (free, open source): Download the latest release from [their github page](https://github.com/Studio3T/robomongo/releases).
-* **PyCharm Pro** / **DataGrip** (paid): If you have PyCharm pro, they have MongoDB support built it. They have [a great write up about it](https://blog.jetbrains.com/datagrip/2020/06/16/introducing-mongodb-shell-in-datagrip/).
-* **[MongoDB's own Compass](https://www.mongodb.com/products/compass)**: Nice, but less "shell/CLI-oriented" (for example, [see this screen shot](https://www.mongodb.com/docs/compass/current/query/skip/) for the query builder). It may work well for you, but I recommend the tools above.
-
-## Connections
-
-Once you get Mongo setup and running (on macOS and Linux you have to start the server afterwards), you should be able to connect to it. In RoboMongo, just use these settings:
-
-* Type: direct
-* Name: local
-* Address: localhost
-* Port: 27017
-
-Defaults on everything else. You can adapt these to the other tools if you chose something else.
-
-Make sure you can connect and get to the server.
+For solutions, look at the final code at `code/09-beanie-querying/beanie_querying_app.py` and files in the folders there.
 
