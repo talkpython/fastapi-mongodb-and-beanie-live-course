@@ -7,3 +7,4 @@ httpx
 beanie
 email-validator
 progressbar2
+python-dateutil
