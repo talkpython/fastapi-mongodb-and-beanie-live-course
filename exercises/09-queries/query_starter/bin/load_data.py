@@ -7,6 +7,8 @@ from typing import List, Optional, Dict
 
 # noinspection PyPackageRequirements
 import progressbar
+import pydantic
+import pymongo.errors
 from dateutil.parser import parse
 
 from bin.bin_utils import package_svc, user_svc
@@ -28,7 +30,7 @@ async def main():
     print("Enter the data folder path, e.g. '/Users/mk/Desktop/pypi-raw-data/pypi-top-5k'")
     data_folder = input("Data folder path: ").strip()
 
-    await mongo_setup.global_init(database='pypi')
+    await mongo_setup.init_db(database='pypi')
     await User.delete_all()
     await Package.delete_all()
     await package_svc.reset_release_count()
@@ -54,8 +56,16 @@ async def do_user_import(user_lookup: Dict[str, str]) -> Dict[str, User]:
     print("Importing users ... ", flush=True)
     with progressbar.ProgressBar(max_value=len(user_lookup)) as bar:
         for idx, (email, name) in enumerate(user_lookup.items()):
-            user = User(email=email, name=name)
-            await user.save()
+            try:
+                user = User(email=email, name=name)
+                if not await User.find_one(User.email == email):
+                    await user.save()
+
+            except pydantic.error_wrappers.ValidationError:
+                pass
+            except pymongo.errors.DuplicateKeyError:
+                pass
+
             bar.update(idx)
 
     print()
