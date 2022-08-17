@@ -6,15 +6,16 @@ import pydantic
 import pymongo
 from beanie import PydanticObjectId
 
-from models.release import Release
+from models.db.release import Release
 
 
 class Package(beanie.Document):
+
     id: str = pydantic.Field(unique=True)
     created_date: datetime.datetime = pydantic.Field(default_factory=datetime.datetime.now)
     last_updated: datetime.datetime = pydantic.Field(default_factory=datetime.datetime.now)
 
-    summary: str
+    summary: str = pydantic.Field(description="A quick summary of the package - see description for more!")
     description: Optional[str] = None
 
     home_page: Optional[str] = None

@@ -1,4 +1,6 @@
 import asyncio
+import datetime
+
 import pymongo.errors
 
 from models import mongo_setup
@@ -30,6 +32,20 @@ async def main():
     print("Boto package:")
     boto = await package_service.get_package_by_id('boto3')
     print(boto)
+
+    print()
+    # cutoff = datetime.datetime.now() - datetime.timedelta(days=7)
+    t0 = datetime.datetime.now()
+    cutoff = datetime.datetime(year=2022, month=5, day=10, hour=15)
+    packages = await package_service.packages_since(cutoff)
+    dt = datetime.datetime.now() - t0
+    print(f"That took {dt.total_seconds() * 1000:,} ms")
+
+    print(f"There are {len(packages)} recent packages.")
+    # for p in packages:
+    #     print(f'{p.id}: {p.summary}')
+    print()
+
     print()
     print(f"We have {await user_service.user_count():,} users.")
 

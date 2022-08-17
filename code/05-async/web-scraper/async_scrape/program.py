@@ -1,12 +1,9 @@
 import asyncio
 
-import httpx
-import requests
 import bs4
+import httpx
 from colorama import Fore
 
-
-# TODO: For now, same as sync, make it async.
 
 async def main():
     await get_title_range()

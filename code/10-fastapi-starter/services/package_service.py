@@ -1,8 +1,10 @@
 import datetime
 
-from models.package import Package, PackageTopLevelOnlyView
-from models.release import Release
-from models.release_analytics import ReleaseAnalytics
+from beanie.odm.operators.find.evaluation import RegEx
+
+from models.db.package import Package, PackageTopLevelOnlyView
+from models.db.release import Release
+from models.db.release_analytics import ReleaseAnalytics
 
 
 async def package_count() -> int:
@@ -30,6 +32,9 @@ def get_latest_release_for_package(package: Package) -> Release | None:
 
 
 async def get_package_by_id(package_name: str) -> Package | None:
+    if not package_name:
+        return None
+
     package_name = package_name.lower().strip()
 
     # package = await Package.get(package_name)
@@ -46,6 +51,14 @@ async def packages_since(cutoff_date: datetime.datetime) -> list[PackageTopLevel
     return packages
 
 
+async def search(keyword) -> list[PackageTopLevelOnlyView]:
+    if not keyword:
+        return []
+    keyword = keyword.lower().strip()
 
+    packages = await Package.find(RegEx('_id', keyword)) \
+        .project(PackageTopLevelOnlyView) \
+        .sort('_id') \
+        .to_list()
 
-
+    return packages

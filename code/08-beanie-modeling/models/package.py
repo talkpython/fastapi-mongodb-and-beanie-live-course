@@ -64,4 +64,3 @@ class PackageTopLevelOnlyView(pydantic.BaseModel):
             "id": "$_id",
             "summary": "$summary"
         }
-
