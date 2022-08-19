@@ -1,0 +1,6 @@
+# requires pip-tools installed
+# command: pip-compile --upgrade requirements.in && pip install -r requirements.txt
+
+fastapi
+uvicorn
+beanie
