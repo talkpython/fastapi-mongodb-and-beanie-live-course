@@ -167,7 +167,7 @@ async def load_package(data: dict):
     try:
         info = data.get('info', {})
 
-        package_name = data.get('info', {}).get('name', '').strip()
+        package_name = data.get('info', {}).get('name', '').strip().lower()
         if not package_name:
             return
 
