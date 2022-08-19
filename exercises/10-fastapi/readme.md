@@ -40,7 +40,7 @@ http://localhost:8000/api/calculator/add/X/Y
 
 What happens if `X = "7"` is submitted? How about `X = "seven"`. If the "response" is 500 server error, that's bad. If it's `404 NOT FOUND`, that's less bad. But wouldn't it be better to tell the caller the data they gave was bad? That's probably either status code 422 or another 400 code (see [httpstatuses.io](https://httpstatuses.io) and make the call).
 
-Update your add API endpoint to return a meaningful error to bad data like this. Hint: FastAPI *may* handle this for you automatically if you define the API endpoint correctly.
+Update your add API endpoint to return a meaningful error to bad data like this. Hint: FastAPI *may* handle this for you automatically if you define the API endpoint correctly.
 
 ## The world also needs auditing
 
@@ -52,8 +52,8 @@ Rather than returning `18`, how about something like:
 
 ```json
 {
-    "request_id": "62fef09ba6209c01fd636e42"
-	  "created": "2022-08-18", // flexible here 
+    "request_id": "62fef09ba6209c01fd636e42",
+	  "created": "2022-08-18",
     "x": 7,
     "y": 11,
     "action": "add",
