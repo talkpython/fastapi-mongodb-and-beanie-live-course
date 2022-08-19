@@ -13,7 +13,7 @@ async def startup():
     await mongo_setup.init_db('calculator')
 
 
-@app.get('/')
+@app.get('/', include_in_schema=False)
 def home():
     return fastapi.Response(content=
                             "<h1>FastAPI Course Homework</h1>"
