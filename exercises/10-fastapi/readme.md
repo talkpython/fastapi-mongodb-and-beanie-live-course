@@ -21,8 +21,8 @@ To add `7 + 11-> 18` is probably the simpliest. But you could go adventurous and
 
 ```json
 {
-    "x": 7,
-    "y": 11
+  "x": 7,
+  "y": 11
 }
 ```
 
@@ -52,12 +52,12 @@ Rather than returning `18`, how about something like:
 
 ```json
 {
-    "request_id": "62fef09ba6209c01fd636e42",
-	  "created": "2022-08-18",
-    "x": 7,
-    "y": 11,
-    "action": "add",
-    "result": 18
+  "request_id": "62fef09ba6209c01fd636e42",
+  "created": "2022-08-18",
+  "x": 7,
+  "y": 11,
+  "action": "add",
+  "result": 18
 }
 ```
 
