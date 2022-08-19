@@ -2,7 +2,7 @@ import fastapi
 import uvicorn
 from starlette.staticfiles import StaticFiles
 
-from api import package_api
+from api import package_api, user_api
 from models.db import mongo_setup
 from views import home
 
@@ -11,6 +11,7 @@ app.mount('/static', StaticFiles(directory='static'), name='static')
 
 app.include_router(home.router, include_in_schema=False)
 app.include_router(package_api.router)
+app.include_router(user_api.router)
 
 
 # NO! -> asyncio.run(mongo_setup.init_db('pypi'))
@@ -20,4 +21,5 @@ async def load_db():
     await mongo_setup.init_db('pypi')
 
 
-uvicorn.run(app)
+if __name__ == '__main__':
+    uvicorn.run(app)
