@@ -22,7 +22,7 @@ certifi==2022.6.15
     #   httpcore
     #   httpx
     #   requests
-charset-normalizer==2.1.0
+charset-normalizer==2.1.1
     # via requests
 click==8.1.3
     # via
@@ -134,7 +134,7 @@ typing-extensions==4.3.0
     # via
     #   locust
     #   pydantic
-urllib3==1.26.11
+urllib3==1.26.12
     # via requests
 uvicorn==0.18.2
     # via -r requirements.in
