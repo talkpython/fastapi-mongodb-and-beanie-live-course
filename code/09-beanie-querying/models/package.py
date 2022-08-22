@@ -29,7 +29,7 @@ class Package(beanie.Document):
     releases: list[Release] = []
     maintainer_ids: list[PydanticObjectId] = []
 
-    class Collection:
+    class Settings:
         name = "packages"
         indexes = [
             pymongo.IndexModel(keys=[("created_date", pymongo.DESCENDING)], name="created_date_descend"),

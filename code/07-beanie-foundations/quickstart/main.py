@@ -18,7 +18,7 @@ class Student(beanie.Document):
     years_exp: int
     languages: list[str]
 
-    class Collection:
+    class Settings:
         name = "students"
 
         indexes = [

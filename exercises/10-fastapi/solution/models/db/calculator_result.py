@@ -13,7 +13,7 @@ class CalculatorResult(beanie.Document):
     action: str
     result: float
 
-    class Collection:
+    class Settings:
         name = "calculations"
         indexes = [
             pymongo.IndexModel(keys=[("created", pymongo.DESCENDING)], name="created_descend"),

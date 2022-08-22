@@ -15,7 +15,7 @@ class User(beanie.Document):
     last_login: datetime.datetime = pydantic.Field(default_factory=datetime.datetime.now)
     profile_image_url: Optional[str] = None
 
-    class Collection:
+    class Settings:
         name = "users"
         indexes = [
             pymongo.IndexModel(keys=[("email", pymongo.ASCENDING)], name="email_ascend", unique=True),

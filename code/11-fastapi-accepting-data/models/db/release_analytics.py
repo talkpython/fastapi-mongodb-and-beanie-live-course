@@ -4,6 +4,6 @@ import beanie
 class ReleaseAnalytics(beanie.Document):
     total_releases: int = 0
 
-    class Collection:
+    class Settings:
         name = "release_analytics"
         indexes = []
