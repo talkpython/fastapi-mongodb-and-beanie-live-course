@@ -8,3 +8,7 @@ beanie
 email-validator
 progressbar2
 python-dateutil
+fastapi
+uvicorn
+jinja2
+locust
